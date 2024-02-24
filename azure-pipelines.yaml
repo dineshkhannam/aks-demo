@@ -14,7 +14,8 @@ steps:
 - bash: az --version
   displayName: 'Show Azure CLI version'
 
-- bash: az account get-access-token --subscription "57498e65-d4a7-4935-b48b-a46c85d91999"
+- bash: az account list
+#- bash: az account get-access-token --subscription "57498e65-d4a7-4935-b48b-a46c85d91999"
   displayName: get access token
 
 - bash: az aks command invoke --resource-group aks-project --name aks-dinesh --command "kubectl get pods -n kube-system"
