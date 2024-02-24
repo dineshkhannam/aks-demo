@@ -23,6 +23,9 @@ steps:
 #- bash: az account get-access-token --subscription
   displayName: get access login
 
+- bash: az aks get-credentials --resource-group aks-project --name aks-dinesh --overwrite-existing
+  displayName: login to aks
+
 - bash: az aks command invoke --resource-group aks-project --name aks-dinesh --command "kubectl get pods -n kube-system"
   displayName: 'get private aks pods list'
 
