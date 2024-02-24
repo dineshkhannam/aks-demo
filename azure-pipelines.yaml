@@ -14,9 +14,6 @@ steps:
 - bash: az --version
   displayName: 'Show Azure CLI version'
 
-- bash: az aks command invoke \
-  --resource-group myResourceGroup \
-  --name myPrivateCluster \
-  --command "kubectl get pods -n kube-system"
+- bash: az aks command invoke --resource-group aks-project --name aks-dinesh --command "kubectl get pods -n kube-system"
 
   displayName: 'get private aks pods list'
