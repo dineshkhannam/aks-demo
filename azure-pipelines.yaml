@@ -4,8 +4,6 @@
 #  --name myPrivateCluster \
 #  --command "kubectl get pods -n kube-system"
 
-
-
 trigger:
 - none
 
