@@ -14,7 +14,7 @@ steps:
 - bash: az --version
   displayName: 'Show Azure CLI version'
 
-- bash: az login --service-principal --username aks-demo-project --password 1648353d-bd5f-448b-907d-24a7253c54f9  --tenant 0cceff71-7f32-4a3d-b3b2-4637e4756e21
+- bash: az login --service-principal --username 1648353d-bd5f-448b-907d-24a7253c54f9 --password Dkf8Q~hKucRXdM4Xn4EjDYi_K7X2oXZabCjPlbLx   --tenant 0cceff71-7f32-4a3d-b3b2-4637e4756e21
 #- bash: az account get-access-token --subscription "57498e65-d4a7-4935-b48b-a46c85d91999"
   displayName: get access login
 
