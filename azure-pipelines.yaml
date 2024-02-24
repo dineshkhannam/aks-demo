@@ -5,20 +5,34 @@
 #  --command "kubectl get pods -n kube-system"
 
 
+az aks get-credentials --resource-group aks-project --name aks-dinesh --overwrite-existing
+
+
 
 trigger:
-- none
+  - none
 
 pool:
   vmImage: `ubuntu-latest`
 
-steps:
-- bash: az --version
-  displayName: 'Show Azure CLI version'
+#steps:
+#- bash: az --version
+#  displayName: 'Show Azure CLI version'
 
-- bash: az aks command invoke \
-  --resource-group myResourceGroup \
-  --name myPrivateCluster \
-  --command "kubectl get pods -n kube-system"
+#- bash: az aks command invoke \
+#  --resource-group myResourceGroup \
+#  --name myPrivateCluster \
+#  --command "kubectl get pods -n kube-system"
 
-  displayName: 'get private aks pods list'
+#  displayName: 'get private aks pods list'
+
+
+- task: AzureCLI@2
+  displayName: Azure CLI
+  inputs:
+    azureSubscription: 57498e65-d4a7-4935-b48b-a46c85d91999
+    scriptType: ps
+    scriptLocation: inlineScript
+    inlineScript: |
+      az --version
+      az aks command invoke --resource-group aks-project  --name aks-dinesh --command "kubectl get pods -n kube-system"
