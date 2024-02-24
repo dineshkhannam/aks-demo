@@ -23,7 +23,7 @@ steps:
 #- bash: az account get-access-token --subscription
   displayName: get access login
 
-- bash: az acr import -n aksdemoalpha - source mcr.microsoft.com/oss/nginx/nginx:1.21.4 - image nginx:1.21.4
+- bash: az acr import -n aksdemoalpha - source mcr.microsoft.com/oss/nginx/nginx:1.21.4 - image aksdemoaplha/nginx:1.21.4
   displayName: import to acr
 
 - bash: az aks get-credentials --resource-group aks-project --name aks-dinesh --overwrite-existing
