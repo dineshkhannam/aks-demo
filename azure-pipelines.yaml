@@ -14,7 +14,7 @@ steps:
 - bash: az --version
   displayName: 'Show Azure CLI version'
 
-- bash: az login --service-principal --username $env:servicePrincipalId --password $env:servicePrincipalKey --tenant $env:tenantId
+- bash: az login --service-principal --username $env:servicePrincipalId --password $env:servicePrincipalKey #--tenant $env:tenantId
 #- bash: az account get-access-token --subscription "57498e65-d4a7-4935-b48b-a46c85d91999"
   displayName: get access login
 
