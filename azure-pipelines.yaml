@@ -1,8 +1,8 @@
-
-az aks command invoke \
-  --resource-group myResourceGroup \
-  --name myPrivateCluster \
-  --command "kubectl get pods -n kube-system"
+#
+#az aks command invoke \
+#  --resource-group myResourceGroup \
+#  --name myPrivateCluster \
+#  --command "kubectl get pods -n kube-system"
 
 
 
