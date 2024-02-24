@@ -18,6 +18,8 @@ pool:
 
 #  displayName: 'get private aks pods list'
 
+steps:
+- checkout: self
 
 - task: AzureCLI@2
   displayName: Azure CLI
