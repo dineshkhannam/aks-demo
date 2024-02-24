@@ -26,6 +26,9 @@ steps:
 #- bash: az acr import -n aksdemoalpha --source mcr.microsoft.com/oss/nginx/nginx:1.21.4 --image aksdemoaplha/nginx:1.21.4
 #  displayName: import to acr
 
+- bash: az acr login -n aksdemoalpha -expose-token
+  displayName: login ACR
+
 - bash: az acr repository list --name aksdemoalpha --output table
   displayName: show artifacts
 
