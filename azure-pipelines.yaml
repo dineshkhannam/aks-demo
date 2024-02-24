@@ -4,8 +4,13 @@
 #  --name myPrivateCluster \
 #  --command "kubectl get pods -n kube-system"
 
+
+
 trigger:
   - none
+
+variables:
+  - group: Azure_Cred
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -14,7 +19,7 @@ steps:
 - bash: az --version
   displayName: 'Show Azure CLI version'
 
-- bash: az login --service-principal --username  --password    --tenant 
+- bash: az login --service-principal --username $[variables.AZURE_CLIENT_ID]  --password $[variables.AZURE_CLIENT_SECRET]   --tenant $[variables.AZURE_TENANT_ID]
 #- bash: az account get-access-token --subscription "57498e65-d4a7-4935-b48b-a46c85d91999"
   displayName: get access login
 
