@@ -19,7 +19,7 @@ steps:
 - bash: az --version
   displayName: 'Show Azure CLI version'
 
-- bash: az login --service-principal --username ${{ variables.AZURE_CLIENT_ID }}  --password ${{ variables.AZURE_CLIENT_SECRET }}   --tenant ${{ variables.AZURE_TENANT_ID }}
+- bash: az login --service-principal --username $(AZURE_CLIENT_ID)  --password $(AZURE_CLIENT_SECRET)   --tenant $(AZURE_TENANT_ID)
 #- bash: az account get-access-token --subscription
   displayName: get access login
 
