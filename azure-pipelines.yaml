@@ -19,8 +19,8 @@ steps:
 - bash: az --version
   displayName: 'Show Azure CLI version'
 
-- bash: az login --service-principal --username $[variables.AZURE_CLIENT_ID]  --password $[variables.AZURE_CLIENT_SECRET]   --tenant $[variables.AZURE_TENANT_ID]
-#- bash: az account get-access-token --subscription "57498e65-d4a7-4935-b48b-a46c85d91999"
+- bash: az login --service-principal --username ${{ variables.AZURE_CLIENT_ID }}  --password ${{ variables.AZURE_CLIENT_SECRET }}   --tenant ${{ variables.AZURE_TENANT_ID }}
+#- bash: az account get-access-token --subscription
   displayName: get access login
 
 - bash: az aks command invoke --resource-group aks-project --name aks-dinesh --command "kubectl get pods -n kube-system"
