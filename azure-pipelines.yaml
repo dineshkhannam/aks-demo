@@ -37,8 +37,8 @@ steps:
 - task: Docker@1
   displayName: "docker pull from ACR"
   inputs:
-    azureSubscriptionEndpoint: $(dockerRegistryServiceConnection)
-    azureContainerRegistry: $(containerRegistry)
+    azureSubscriptionEndpoint: acraks
+    azureContainerRegistry: aksdemoalpha.azurecr.io
     command: pull
     arguments: 'aksdemoalpha.azurecr.io/nginx:1.21.4'
     
