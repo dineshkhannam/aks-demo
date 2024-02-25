@@ -3,6 +3,8 @@
 #  --resource-group myResourceGroup \
 #  --name myPrivateCluster \
 #  --command "kubectl get pods -n kube-system"
+# secret id : 9ce603cd-7d0f-41f7-bad5-31b7b50d39bd
+# value id : Dkf8Q~hKucRXdM4Xn4EjDYi_K7X2oXZabCjPlbLx
 
 
 
@@ -23,14 +25,14 @@ steps:
 #- bash: az account get-access-token --subscription
   displayName: get access login
 
-#- bash: az acr import -n aksdemoalpha --source mcr.microsoft.com/oss/nginx/nginx:1.21.4 --image aksdemoaplha/nginx:1.21.4
-#  displayName: import to acr
+- bash: az acr import --force -n aksdemoalpha --source mcr.microsoft.com/oss/nginx/nginx:1.21.4 --image aksdemoaplha/nginx:1.21.4
+  displayName: import to acr
 
-- bash: az acr login -n aksdemoalpha 
-  displayName: login ACR
+#- bash: az acr login -n aksdemoalpha 
+#  displayName: login ACR
 
-- bash: az acr repository list --name aksdemoalpha --output table
-  displayName: show artifacts
+#- bash: az acr repository list --name aksdemoalpha --output table
+#  displayName: show artifacts
 
 #- bash: az acr repository show-tags --name aksdemoalpha --repository nginx
 
