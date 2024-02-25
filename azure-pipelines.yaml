@@ -14,6 +14,14 @@ trigger:
 variables:
   - group: Azure_Cred
 
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'acraks' ## Review Service Connections
+  imageRepository: 'aksdemoaplha/nginx'
+  containerRegistry: 'aksdemoalpha.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  tag: '$(Build.BuildId)'
+
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -28,6 +36,14 @@ steps:
 - bash: az acr import --force -n aksdemoalpha --source mcr.microsoft.com/oss/nginx/nginx:1.21.4 --image aksdemoaplha/nginx:1.21.4
   displayName: import to acr
 
+- task: Docker@1
+  displayName: "docker pull from ACR"
+  inputs:
+    azureSubscriptionEndpoint: $(dockerRegistryServiceConnection)
+    azureContainerRegistry: $(containerRegistry)
+    command: pull
+    arguments: 'aksdemoalpha.azurecr.io/nginx:1.21.4'
+    
 #- bash: az acr login -n aksdemoalpha 
 #  displayName: login ACR
 
