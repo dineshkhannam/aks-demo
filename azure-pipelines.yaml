@@ -13,8 +13,6 @@ trigger:
 
 variables:
   - group: Azure_Cred
-
-variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'acraks' ## Review Service Connections
   imageRepository: 'aksdemoaplha/nginx'
