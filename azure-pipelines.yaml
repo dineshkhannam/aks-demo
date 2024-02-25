@@ -13,12 +13,7 @@ trigger:
 
 variables:
   - group: Azure_Cred
-  # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'acraks' ## Review Service Connections
-  imageRepository: 'aksdemoaplha/nginx'
-  containerRegistry: 'aksdemoalpha.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
+
 
 pool:
   vmImage: 'ubuntu-latest'
